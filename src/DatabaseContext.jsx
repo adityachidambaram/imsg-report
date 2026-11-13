@@ -7,14 +7,13 @@ import {
   useState,
 } from "react";
 import initSqlJs from "sql.js";
-import sqlWasmUrl from "sql.js/dist/sql-wasm.wasm?url";
 import { CONTACTS_SQL, runQuery } from "./queries.js";
 
 const DatabaseContext = createContext(null);
 let sqlPromise;
 
 function getSql() {
-  sqlPromise ??= initSqlJs({ locateFile: () => sqlWasmUrl });
+  sqlPromise ??= initSqlJs({ locateFile: () => "/sql-wasm.wasm" });
   return sqlPromise;
 }
 
