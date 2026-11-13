@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+
+chat.db
+chat.db-*
+AddressBook-v22.abcddb
+AddressBook-v22.abcddb-*
