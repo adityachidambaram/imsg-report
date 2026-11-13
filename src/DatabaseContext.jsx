@@ -13,7 +13,9 @@ const DatabaseContext = createContext(null);
 let sqlPromise;
 
 function getSql() {
-  sqlPromise ??= initSqlJs({ locateFile: () => "/sql-wasm.wasm" });
+  sqlPromise ??= initSqlJs({
+    locateFile: () => `${import.meta.env.BASE_URL}sql-wasm.wasm`,
+  });
   return sqlPromise;
 }
 
